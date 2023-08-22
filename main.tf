@@ -234,7 +234,8 @@ resource "aws_ecs_service" "jnv_ecs_service" {
 
   lifecycle {
     ignore_changes = [
-      task_definition
+      task_definition,
+      desired_count
     ]
   }
 }
