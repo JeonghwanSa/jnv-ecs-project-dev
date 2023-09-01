@@ -30,3 +30,8 @@ variable "container_port" {
 variable "listener_port" {
   default = 8888
 }
+
+variable "management_sg" {
+  type    = string
+  default = "sg-0d53edaaf7f0713bb"
+}

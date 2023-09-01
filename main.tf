@@ -226,7 +226,7 @@ resource "aws_ecs_service" "jnv_ecs_service" {
   network_configuration {
     assign_public_ip = false
     security_groups = [
-      "sg-0d53edaaf7f0713bb",
+      var.management_sg,
       aws_security_group.jnv_ecs_service_sg.id
     ]
     subnets = var.subnet_ids
