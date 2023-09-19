@@ -51,6 +51,7 @@ No modules.
 | <a name="input_jnv_project"></a> [jnv\_project](#input\_jnv\_project) | n/a | `string` | `"szs"` | no |
 | <a name="input_jnv_region"></a> [jnv\_region](#input\_jnv\_region) | n/a | `string` | `"apne2"` | no |
 | <a name="input_listener_port"></a> [listener\_port](#input\_listener\_port) | n/a | `number` | `8888` | no |
+| <a name="input_listener_rule_priority"></a> [listener\_rule\_priority](#input\_listener\_rule\_priority) | n/a | `number` | `99999` | no |
 | <a name="input_loadbalaner_arn"></a> [loadbalaner\_arn](#input\_loadbalaner\_arn) | n/a | `string` | `"arn:aws:elasticloadbalancing:ap-northeast-2:185236431346:loadbalancer/app/szs-apne2-prv-alb-dev/4ed916fe776dedba"` | no |
 | <a name="input_management_sg"></a> [management\_sg](#input\_management\_sg) | n/a | `string` | `"sg-0d53edaaf7f0713bb"` | no |
 | <a name="input_need_loadbalancer"></a> [need\_loadbalancer](#input\_need\_loadbalancer) | n/a | `bool` | `false` | no |

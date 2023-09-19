@@ -28,7 +28,7 @@ resource "aws_lb_listener_rule" "jnv_ecs_service_alb_rule" {
   count = var.need_loadbalancer ? 1 : 0
 
   listener_arn = aws_lb_listener.jnv_ecs_service_alb_listener[0].arn
-  priority     = 99999
+  priority     = var.listener_rule_priority
   tags         = {}
   tags_all     = {}
   action {
@@ -36,7 +36,9 @@ resource "aws_lb_listener_rule" "jnv_ecs_service_alb_rule" {
     type             = "forward"
   }
   condition {
-
+    path_pattern {
+      values = ["/*"]
+    }
   }
 }
 
