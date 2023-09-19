@@ -220,7 +220,7 @@ resource "aws_ecs_service" "jnv_ecs_service" {
       container_name   = join("-", ["${var.jnv_project}", "${var.jnv_region}", lower("${var.application_name}"), "container", "${var.jnv_environment}"])
       container_port   = var.container_port
       elb_name         = null
-      target_group_arn = aws_lb_target_group.jnv_ecs_service_alb_tg.arn
+      target_group_arn = aws_lb_target_group.jnv_ecs_service_alb_tg[0].arn
     }
   }
   network_configuration {
