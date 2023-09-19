@@ -24,23 +24,23 @@ resource "aws_lb_listener" "jnv_ecs_service_alb_listener" {
   }
 }
 
-resource "aws_lb_listener_rule" "jnv_ecs_service_alb_rule" {
-  count = var.need_loadbalancer ? 1 : 0
+# resource "aws_lb_listener_rule" "jnv_ecs_service_alb_rule" {
+#   count = var.need_loadbalancer ? 1 : 0
 
-  listener_arn = aws_lb_listener.jnv_ecs_service_alb_listener[0].arn
-  priority     = var.listener_rule_priority
-  tags         = {}
-  tags_all     = {}
-  action {
-    target_group_arn = aws_lb_target_group.jnv_ecs_service_alb_tg[0].arn
-    type             = "forward"
-  }
-  condition {
-    path_pattern {
-      values = ["/*"]
-    }
-  }
-}
+#   listener_arn = aws_lb_listener.jnv_ecs_service_alb_listener[0].arn
+#   priority     = var.listener_rule_priority
+#   tags         = {}
+#   tags_all     = {}
+#   action {
+#     target_group_arn = aws_lb_target_group.jnv_ecs_service_alb_tg[0].arn
+#     type             = "forward"
+#   }
+#   condition {
+#     path_pattern {
+#       values = ["/*"]
+#     }
+#   }
+# }
 
 resource "aws_lb_target_group" "jnv_ecs_service_alb_tg" {
   count = var.need_loadbalancer ? 1 : 0
