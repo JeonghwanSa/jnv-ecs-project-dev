@@ -39,3 +39,8 @@ variable "management_sg" {
   type    = string
   default = "sg-0d53edaaf7f0713bb"
 }
+
+variable "ecs_service_lb_sg" {
+  type    = string
+  default = "sg-065f2646decd01027"
+}
