@@ -171,7 +171,7 @@ resource "aws_security_group" "jnv_ecs_service_sg" {
       to_port     = 8080
       protocol    = "tcp"
       security_groups = [
-        "sg-065f2646decd01027"
+        var.loadbalancer_sg
       ]
     }
   }

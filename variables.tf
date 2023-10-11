@@ -30,6 +30,9 @@ variable "container_port" {
 variable "listener_port" {
   default = 8888
 }
+variable "loadbalancer_sg" {
+  default = "sg-065f2646decd01027"
+}
 
 variable "listener_rule_priority" {
   default = 99999
