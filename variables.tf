@@ -33,6 +33,31 @@ variable "listener_port" {
 variable "loadbalancer_sg" {
   default = "sg-065f2646decd01027"
 }
+variable "tg_health_check" {
+  type = object({
+    enabled             = bool
+    healthy_threshold   = number
+    interval            = number
+    matcher             = string
+    path                = string
+    port                = string
+    protocol            = string
+    timeout             = number
+    unhealthy_threshold = number
+  })
+
+  default = {
+    enabled             = true
+    healthy_threshold   = 5
+    interval            = 30
+    matcher             = "200"
+    path                = "/actuator/health"
+    port                = "traffic-port"
+    protocol            = "HTTP"
+    timeout             = 5
+    unhealthy_threshold = 2
+  }
+}
 
 variable "listener_rule_priority" {
   default = 99999
