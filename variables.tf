@@ -36,6 +36,9 @@ variable "listener_protocol" {
 variable "listener_ssl_policy" {
   default = null
 }
+variable "alb_certificate_arn" {
+  default = null
+}
 variable "loadbalancer_sg" {
   default = "sg-065f2646decd01027"
 }

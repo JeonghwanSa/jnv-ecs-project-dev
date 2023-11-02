@@ -11,7 +11,7 @@ resource "aws_lb_listener" "jnv_ecs_service_alb_listener" {
   count = var.need_loadbalancer ? 1 : 0
 
   alpn_policy       = null
-  certificate_arn   = null
+  certificate_arn   = var.alb_certificate_arn
   load_balancer_arn = var.loadbalaner_arn
   port              = var.listener_port
   protocol          = var.listener_protocol
