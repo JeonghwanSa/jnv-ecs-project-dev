@@ -14,8 +14,8 @@ resource "aws_lb_listener" "jnv_ecs_service_alb_listener" {
   certificate_arn   = null
   load_balancer_arn = var.loadbalaner_arn
   port              = var.listener_port
-  protocol          = "HTTP"
-  ssl_policy        = null
+  protocol          = var.listener_protocol
+  ssl_policy        = var.listener_ssl_policy
   tags              = {}
   tags_all          = {}
   default_action {

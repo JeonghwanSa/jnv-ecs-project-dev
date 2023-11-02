@@ -30,6 +30,12 @@ variable "container_port" {
 variable "listener_port" {
   default = 8888
 }
+variable "listener_protocol" {
+  default = "HTTP"
+}
+variable "listener_ssl_policy" {
+  default = null
+}
 variable "loadbalancer_sg" {
   default = "sg-065f2646decd01027"
 }
