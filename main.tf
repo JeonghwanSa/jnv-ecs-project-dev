@@ -3,9 +3,9 @@ locals {
   account_id = data.aws_caller_identity.current.account_id
 }
 
-resource "aws_secretsmanager_secret" "jnv_ecs_service_secrets" {
-  name = join("-", ["${var.jnv_project}", "${var.jnv_region}", lower("${var.application_name}"), "seckey", "${var.jnv_environment}"])
-}
+# resource "aws_secretsmanager_secret" "jnv_ecs_service_secrets" {
+#   name = join("-", ["${var.jnv_project}", "${var.jnv_region}", lower("${var.application_name}"), "seckey", "${var.jnv_environment}"])
+# }
 
 resource "aws_lb_listener" "jnv_ecs_service_alb_listener" {
   count = var.need_loadbalancer ? 1 : 0
@@ -125,12 +125,12 @@ resource "aws_ecs_task_definition" "jnv_ecs_service_taskdef" {
           protocol      = "tcp"
         }
       ]
-      secrets = [
-        {
-          name      = "ENC_KEY"
-          valueFrom = aws_secretsmanager_secret.jnv_ecs_service_secrets.arn
-        }
-      ]
+      # secrets = [
+      #   {
+      #     name      = "ENC_KEY"
+      #     valueFrom = aws_secretsmanager_secret.jnv_ecs_service_secrets.arn
+      #   }
+      # ]
       volumesFrom = []
     }
   ])
