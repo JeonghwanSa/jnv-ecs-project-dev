@@ -21,7 +21,7 @@ variable "need_loadbalancer" {
   type    = bool
   default = false
 }
-variable "loadbalaner_arn" {
+variable "loadbalancer_arn" {
   default = "arn:aws:elasticloadbalancing:ap-northeast-2:185236431346:loadbalancer/app/szs-apne2-prv-alb-dev/4ed916fe776dedba"
 }
 variable "container_port" {
