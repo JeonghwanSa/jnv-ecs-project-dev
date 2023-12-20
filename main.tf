@@ -12,7 +12,7 @@ resource "aws_lb_listener" "jnv_ecs_service_alb_listener" {
 
   alpn_policy       = null
   certificate_arn   = var.alb_certificate_arn
-  load_balancer_arn = var.loadbalaner_arn
+  load_balancer_arn = var.loadbalancer_arn
   port              = var.listener_port
   protocol          = var.listener_protocol
   ssl_policy        = var.listener_ssl_policy
